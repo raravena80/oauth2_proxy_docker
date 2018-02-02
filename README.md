@@ -36,7 +36,7 @@ spec:
         track: stable
     spec:
       containers:
-        - name: hello
+        - name: oauth2_proxy
           image: "yourdockerhub/oauth2_proxy2"
           ports:
             - name: http
