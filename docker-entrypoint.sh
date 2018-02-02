@@ -38,6 +38,7 @@ if [ "$1" = 'oauth2_proxy' ]; then
             custom-templates-dir
             display-htpasswd-form
             email-domain
+            footer
             github-org
             github-team
             google-admin-email
@@ -47,9 +48,11 @@ if [ "$1" = 'oauth2_proxy' ]; then
             http-address
             https-address
             login-url
+            oidc-issuer-url
             pass-access-token
             pass-basic-auth
             pass-host-header
+            pass-user-headers
             profile-url
             provider
             proxy-prefix
@@ -57,10 +60,14 @@ if [ "$1" = 'oauth2_proxy' ]; then
             redirect-url
             resource
             request-logging
+            request-logging-format
             scope
+            set-xauthrequest
             signature-key
+            skip-auth-preflight
             skip-auth-regex
             skip-provider-button
+            ssl-insecure-skip-verify
             tls-cert
             tls-key
             upstream
