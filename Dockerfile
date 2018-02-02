@@ -17,10 +17,10 @@ RUN set -xe \
     && apk add --no-cache --virtual .build-deps \
         tar \
     \
-    && curl -O -fSL "https://github.com/bitly/oauth2_proxy/releases/download/v${OAUTH2_PROXY_VERSION}/oauth2_proxy-${OAUTH2_PROXY_VERSION}.linux-amd64.go1.8.1.tar.gz" \
+    && curl -O -fSL "https://github.com/bitly/oauth2_proxy/releases/download/v${OAUTH2_PROXY_VERSION}/oauth2_proxy-${OAUTH2_PROXY_VERSION}.0.linux-amd64.go1.8.1.tar.gz" \
     && mkdir /oauth2_proxy \
-    && tar -xf oauth2_proxy-${OAUTH2_PROXY_VERSION}.linux-amd64.go1.6.tar.gz -C /oauth2_proxy --strip-components=1 --no-same-owner \
-    && rm oauth2_proxy-${OAUTH2_PROXY_VERSION}.linux-amd64.go1.6.tar.gz \
+    && tar -xf oauth2_proxy-${OAUTH2_PROXY_VERSION}.0.linux-amd64.go1.8.1.tar.gz -C /oauth2_proxy --strip-components=1 --no-same-owner \
+    && rm oauth2_proxy-${OAUTH2_PROXY_VERSION}.0.linux-amd64.go1.8.1.tar.gz \
     \
     && curl -O -fSL "https://raw.githubusercontent.com/bitly/oauth2_proxy/v${OAUTH2_PROXY_VERSION}/contrib/oauth2_proxy.cfg.example" \
     && mkdir /conf \
