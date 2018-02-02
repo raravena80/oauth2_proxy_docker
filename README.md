@@ -41,6 +41,20 @@ spec:
           ports:
             - name: http
               containerPort: 4180
+          env:
+            - name: OAUTH2_PROXY_CLIENT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: oauth2_proxy_config
+                  key: client_id
+            - name: OAUTH_PROXY_CLIENT_SECRET
+                configMapKeyRef:
+                  name: oauth2_proxy_config
+                  key: client_secret
+            - name: OAUTH_PROXY_UPSTREAM
+                configMapKeyRef:
+                  name: oauth2_proxy_config
+                  key: proxy_upstream
 ```
 Create the deployment
 ```
