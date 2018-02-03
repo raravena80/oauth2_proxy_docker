@@ -8,7 +8,7 @@ RUN apk add --no-cache su-exec
 
 ENV OAUTH2_PROXY_VERSION="2.2"
 
-# install zeppelin
+# install
 RUN set -xe \
     && apk add --no-cache --virtual .run-deps \
         bash \
