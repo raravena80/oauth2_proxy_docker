@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: golang:1.8.6
+      - image: golang:1.9.3
     working_directory: /go/src/github.com/raravena80/oauth2_proxy_docker
     steps:
       - checkout
