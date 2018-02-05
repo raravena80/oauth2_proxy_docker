@@ -81,3 +81,46 @@ Create the service
 ```
 kubectl create -f service.yml
 ```
+
+## Marathon
+
+```
+{
+  "id": "/oauth2_proxy",
+  "cmd": null,
+  "cpus": 1,
+  "mem": 1024,
+  "disk": 0,
+  "instances": 1,
+  "constraints": [
+    [
+      "hostname",
+      "UNIQUE"
+    ]
+  ],
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "raravena80/oauth2_proxy:latest",
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 4180,
+          "hostPort": 4180,
+          "protocol": "tcp",
+          "name": "skopos",
+          "labels": {}
+        }
+      ],
+      "privileged": false,
+      "parameters": [],
+      "forcePullImage": false
+    }
+  },
+  "env": {
+    "OAUTH2_PROXY_CLIENT_ID": "your-client-id",
+    "OAUTH_PROXY_CLIENT_SECRET": "your-client-secret",
+    "OAUTH_PROXY_UPSTREAM": "your-upstream"
+  }
+}
+```
